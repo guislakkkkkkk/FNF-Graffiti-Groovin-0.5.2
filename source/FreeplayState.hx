@@ -113,14 +113,12 @@ class FreeplayState extends MusicBeatState
 		var Scale = 980;
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bars'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scale = 0.5;
 		add(bg);
 		bg.screenCenter();
 
 		var Scale = 980;
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scale = 0.5;
 		add(bg);
 		bg.screenCenter();
 
