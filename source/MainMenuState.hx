@@ -72,7 +72,7 @@ class MainMenuState extends MusicBeatState
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.x = 60;
-		bg.scaleObject('skarlet', 0.5, 0.5);
+		bg.scaleBackground('skarlet', 0.5, 0.5);
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -82,7 +82,7 @@ class MainMenuState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('mmbars'));
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
-		bg.scaleObject('mmbars', 0.5, 0.5);
+		bg.scaleBackground('mmbars', 0.5, 0.5);
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -92,7 +92,7 @@ class MainMenuState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(Paths.image('mmbg'));
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
-		bg.scaleObject('mmbg', 0.5, 0.5);
+		bg.scaleBackground('mmbg', 0.5, 0.5);
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -309,11 +309,12 @@ class MainMenuState extends MusicBeatState
 								switch (daChoice)
 								{
 									case 'story':
-										FlxG.isStoryMode.play(Paths.isStoryMode('main'));
-										PlayState.isStoryMode = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '', PlayState.storyPlaylist[0].toLowerCase());
+										FlxG.sound.play(Paths.sound('soda-pop,fuss,streetstyle'));
+										PlayState.storyPlaylist = ['main'];
+										PlayState.isStoryMode = true;
+										PlayState.SONG = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '', PlayState.storyPlaylist[0].toLowerCase());
 										PlayState.campaignScore = 0;
-										PlayState.campaignMisses = 0;
-										LoadingState.loadAndSwitchState(new PlayState(), true);
+										PlayState.campaignMisses = 0;LoadingState.loadAndSwitchState(new PlayState(), true);
 										FreeplayState.destroyFreeplayVocals();
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
