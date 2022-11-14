@@ -72,7 +72,7 @@ class MainMenuState extends MusicBeatState
 		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.x = 60;
-		bg.scaleObject('renders/skarlet', 0.5, 0.5);
+		bg.scaleObject('skarlet', 0.5, 0.5);
 		bg.updateHitbox();
 		bg.screenCenter();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -309,8 +309,8 @@ class MainMenuState extends MusicBeatState
 								switch (daChoice)
 								{
 									case 'story':
-										FlxG.storyWeek.play(Paths.storyWeek('main'));
-										PlayState.storyWeek = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '', PlayState.storyPlaylist[0].toLowerCase());
+										FlxG.isStoryMode.play(Paths.isStoryMode('main'));
+										PlayState.isStoryMode = Song.loadFromJson(PlayState.storyPlaylist[0].toLowerCase() + '', PlayState.storyPlaylist[0].toLowerCase());
 										PlayState.campaignScore = 0;
 										PlayState.campaignMisses = 0;
 										LoadingState.loadAndSwitchState(new PlayState(), true);
