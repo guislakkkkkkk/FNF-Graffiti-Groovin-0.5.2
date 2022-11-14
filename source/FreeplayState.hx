@@ -107,18 +107,18 @@ class FreeplayState extends MusicBeatState
 		bg.animation.play('idler');//you can rename the anim however you want to
 		bg.scrollFactor.set();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scaleBackground('record', 0.5, 0.5);
+		bg.scaleBg('record', 0.5, 0.5);
 		add(bg);
 		
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bars'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scaleBackground('bars', 0.5, 0.5);
+		bg.scaleBg('bars', 0.5, 0.5);
 		add(bg);
 		bg.screenCenter();
 
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scaleOBackground('bg', 0.5, 0.5);
+		bg.scaleBg('bg', 0.5, 0.5);
 		add(bg);
 		bg.screenCenter();
 
