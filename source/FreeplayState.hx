@@ -100,22 +100,24 @@ class FreeplayState extends MusicBeatState
 				addSong(songArray[0], 0, songArray[1], Std.parseInt(songArray[2]));
 			}
 		}*/
-		
+
+		var Scale = 980
 		bg = new FlxSprite(-820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
 		bg.frames = Paths.getSparrowAtlas('freeplay/record');//here put the name of the xml
 		bg.animation.addByPrefix('idler', 'vinyl', 24, true);//on 'idle normal' change it to your xml one
 		bg.animation.play('idler');//you can rename the anim however you want to
 		bg.scrollFactor.set();
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
-		bg.scale = 0.5;
 		add(bg);
 		
+		var Scale = 980
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bars'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		bg.scale = 0.5;
 		add(bg);
 		bg.screenCenter();
 
+		var Scale = 980
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
 		bg.scale = 0.5;
