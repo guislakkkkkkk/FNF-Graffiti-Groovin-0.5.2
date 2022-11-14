@@ -101,14 +101,14 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 		
-		char = new FlxSprite(-820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
-		char.frames = Paths.getSparrowAtlas('freeplay/record');//here put the name of the xml
-		char.animation.addByPrefix('idler', 'vinyl', 24, true);//on 'idle normal' change it to your xml one
-		char.animation.play('idler');//you can rename the anim however you want to
-		char.scrollFactor.set();
-		char.antialiasing = ClientPrefs.globalAntialiasing;
-		char.scaleObject('', 0.5, 0.5);
-		add(char);
+		bg = new FlxSprite(-820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
+		bg.frames = Paths.getSparrowAtlas('freeplay/record');//here put the name of the xml
+		bg.animation.addByPrefix('idler', 'vinyl', 24, true);//on 'idle normal' change it to your xml one
+		bg.animation.play('idler');//you can rename the anim however you want to
+		bg.scrollFactor.set();
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.scaleObject('', 0.5, 0.5);
+		add(bg);
 		
 		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bars'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
@@ -116,11 +116,11 @@ class FreeplayState extends MusicBeatState
 		add(bg);
 		bg.screenCenter();
 
-		bg1 = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
-		bg1.antialiasing = ClientPrefs.globalAntialiasing;
-		bg1.scaleObject('', 0.5, 0.5);
-		add(bg1);
-		bg1.screenCenter();
+		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
+		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.scaleObject('', 0.5, 0.5);
+		add(bg);
+		bg.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
