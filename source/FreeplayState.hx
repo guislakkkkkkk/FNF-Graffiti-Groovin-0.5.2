@@ -101,7 +101,7 @@ class FreeplayState extends MusicBeatState
 			}
 		}*/
 		
-		char = new FlxSprite(820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
+		char = new FlxSprite(-820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
 		char.frames = Paths.getSparrowAtlas('freeplay/record');//here put the name of the xml
 		char.animation.addByPrefix('idler', 'vinyl', 24, true);//on 'idle normal' change it to your xml one
 		char.animation.play('idler');//you can rename the anim however you want to
