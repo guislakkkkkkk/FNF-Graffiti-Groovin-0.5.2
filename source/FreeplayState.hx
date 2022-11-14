@@ -100,20 +100,36 @@ class FreeplayState extends MusicBeatState
 				addSong(songArray[0], 0, songArray[1], Std.parseInt(songArray[2]));
 			}
 		}*/
-
-		bg = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+		
+		char = new FlxSprite(820, 170).loadGraphic(Paths.image('freeplay/record'));//put your cords and image here
+		char.frames = Paths.getSparrowAtlas('freeplay/record');//here put the name of the xml
+		char.animation.addByPrefix('idler', 'vinyl', 24, true);//on 'idle normal' change it to your xml one
+		char.animation.play('idler');//you can rename the anim however you want to
+		char.scrollFactor.set();
+		char.antialiasing = ClientPrefs.globalAntialiasing;
+		char.scaleObject('', 0.5, 0.5);
+		add(char);
+		
+		bg = new FlxSprite().loadGraphic(Paths.image('freeplay/bars'));
 		bg.antialiasing = ClientPrefs.globalAntialiasing;
+		bg.scaleObject('', 0.5, 0.5);
 		add(bg);
 		bg.screenCenter();
+
+		bg1 = new FlxSprite().loadGraphic(Paths.image('freeplay/bg'));
+		bg1.antialiasing = ClientPrefs.globalAntialiasing;
+		bg1.scaleObject('', 0.5, 0.5);
+		add(bg1);
+		bg1.screenCenter();
 
 		grpSongs = new FlxTypedGroup<Alphabet>();
 		add(grpSongs);
 
 		for (i in 0...songs.length)
 		{
-			var songText:Alphabet = new Alphabet(0, (70 * i) + 30, songs[i].songName, true, false);
-			songText.isMenuItem = true;
-			songText.targetY = i;
+			var songText:Alphabet = new Alphabet(90, 320, songs[i].songName, true);
+			songText.isMenuItemCenter = true;
+			songText.targetY = i - curSelected;
 			grpSongs.add(songText);
 
 			if (songText.width > 980)
